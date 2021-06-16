@@ -71,7 +71,7 @@ public class Team {
 				+ ", totalWon=" + totalWon + "]";
 	}
 
-	public Team() {
-
+	public Team () {
+		
 	}
 }
