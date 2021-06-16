@@ -40,7 +40,7 @@ const {teamName}=useParams();
         <div>
             <h2>{team.teamName}</h2>
 
-            <MatchDetails team={team} />
+            <MatchDetails team={team} match={team.list[0]} />
             <h3>Other Matches</h3>
             {team.list.slice(1).map(match =>  <MatchAdditionalDetails match={match} teamName={teamName} / >)}
 
