@@ -16,6 +16,7 @@ const {teamName}=useParams();
         Function cannot be made async - hence one more function inside it is created to make it async
         parameter if not given - makes unlimited calls as the state changes
         parameter if marked as empty [] - makes a single call on page load
+        [teamName] - whenever the teamName changes (when clicked on the Link in MatchAdditionalDetails component), useEffect is called
     */ 
     useEffect(
         () => {
