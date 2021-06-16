@@ -2,6 +2,8 @@ import {useEffect, useState} from 'react'
 import MatchDetails from './MatchDetails';
 import MatchAdditionalDetails from './MatchAdditionalDetails';
 import { useParams } from 'react-router';
+import './TeamPage.scss';
+import { PieChart } from 'react-minimal-pie-chart';
 
 
 const TeamPage = () => {
@@ -37,13 +39,27 @@ const {teamName}=useParams();
     }
     return (
 
-        <div>
-            <h2>{team.teamName}</h2>
-
-            <MatchDetails team={team} match={team.list[0]} />
-            <h3>Other Matches</h3>
+        <div className='TeamPage'>
+            <div className='team-name'>
+                <h2>{team.teamName}</h2>
+            </div>
+                <div className='win-loss-section'> wins / Losses
+                <PieChart
+                    data={[
+                        { title: 'Lost',  value: team.totalMatchesPlayed - team.totalWon, color: '#a34d5d' },
+                        { title: 'Won',  value: team.totalWon, color: '#4da375' }
+                       
+                    ]}
+                    />
+            </div>
+            <div className='main-team-section'>
+                <MatchDetails team={team} match={team.list[0]} />
+            </div>
+          
             {team.list.slice(1).map(match =>  <MatchAdditionalDetails match={match} teamName={teamName} / >)}
-
+            <div className='more-section'>
+                <a href='#'>More ></a>
+            </div>
         </div>
     )
 }
