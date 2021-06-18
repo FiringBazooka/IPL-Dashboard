@@ -5,12 +5,13 @@ const MatchDetails = ({team,match}) => {
 
 	if(!match)	return null;
 	const isTeamWon = team === match.winner;
+	const otherTeamName = match.team1===team ? match.team2 : match.team1;
+
 	
 	return (
 		<div className={isTeamWon ? 'MatchDetails winning-team': 'MatchDetails losing-team'}>
 		<div>
-			<h4>Last Match</h4>
-		  <h4>vs {match.team2} at {match.venue} on {match.date} </h4>
+		  <h4>vs {otherTeamName} at {match.venue} on {match.date} </h4>
 		  	<h4>{match.winner} won by {match.resultMargin} {match.result}</h4>
 		  </div>
 

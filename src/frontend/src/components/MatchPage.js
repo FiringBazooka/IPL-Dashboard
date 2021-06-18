@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import MatchDetails from "./MatchDetails";
+import './MatchPage.scss'
+import YearSelector from "./YearSelector";
 
 const MatchPage = () => {
 
@@ -16,15 +19,23 @@ const MatchPage = () => {
                 setMatches(data);
             };
             serviceCall();
-        },[]
+        },[teamName,year]
     )
 
     return (
-        <div>
-            <h1>Match Page</h1>
+        <div className='MatchPage'>
+            <div className='year-list'> <h4>select year </h4>
+            <YearSelector yearSelected={year} teamName={teamName}/>
+          </div>
+            
+            <div>
+            
+               <h1 className='teamName-header-h1'> <Link className='teamName-header' to={`/team/${teamName}`}>{teamName}</Link></h1>
+    
             {
-                matches.map(match => <MatchDetails match={match}/>)
+                matches.map(match => <MatchDetails match={match} team={teamName}/>)
             }
+            </div>
         
         </div>
     )

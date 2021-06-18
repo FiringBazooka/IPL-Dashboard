@@ -1,0 +1,17 @@
+.MatchPage {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+
+    .year-list {
+        margin-top: 100px;
+        text-align: center;
+    }
+
+    .teamName-header {
+        color:black;
+    }
+
+    .teamName-header-h1 {
+        font-size: 3rem;
+    }
+}

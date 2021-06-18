@@ -4,6 +4,7 @@ import MatchAdditionalDetails from './MatchAdditionalDetails';
 import { useParams } from 'react-router';
 import './TeamPage.scss';
 import { PieChart } from 'react-minimal-pie-chart';
+import { Link } from 'react-router-dom';
 
 
 const TeamPage = () => {
@@ -58,7 +59,7 @@ const {teamName}=useParams();
           
             {team.list.slice(1).map(match =>  <MatchAdditionalDetails match={match} teamName={teamName} / >)}
             <div className='more-section'>
-                <a href='#'>More ></a>
+                <Link to={`/team/${teamName}/matches/${2020}`}>More ></Link>
             </div>
         </div>
     )
