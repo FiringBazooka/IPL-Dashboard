@@ -11,3 +11,14 @@
 .losing-team {
   background-color: #a34d5d;
 }
+
+
+.home-title-link{
+  color: White;
+  text-decoration: none;
+  font-size: 3rem;
+}
+
+.home-title-div {
+  text-align: center;
+}

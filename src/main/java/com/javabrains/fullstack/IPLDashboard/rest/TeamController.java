@@ -44,4 +44,9 @@ public class TeamController {
 				teamName, startDate, endDate);
 
 	}
+
+	@GetMapping("/teams")
+	public List<Team> getAllTeams() {
+		return teamDao.findAll();
+	}
 }
