@@ -14,7 +14,7 @@ const YearSelector = ({yearSelected, teamName}) =>{
     
     
     return (
-        years.map(year=> 
+        years.map(year=>
            
         (
             <div className={year==yearSelected ? 'YearSelector highlight-year':'YearSelector'}>

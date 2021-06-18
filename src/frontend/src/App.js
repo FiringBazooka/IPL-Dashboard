@@ -1,7 +1,7 @@
 
 import TeamPage from "./components/TeamPage";
 import "./App.css";
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
+import {HashRouter as Router, Link, Route} from 'react-router-dom';
 import MatchPage from "./components/MatchPage";
 import HomePage from "./components/HomePage";
 

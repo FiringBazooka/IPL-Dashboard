@@ -25,7 +25,7 @@ const MatchPage = () => {
 
     const getMatchDetails = ()=>{
         if(!matches || !matches.length) return <h1>Not Featured in this season.</h1>;
-        return matches.map(match => <MatchDetails match={match} team={teamName}/>);
+        return matches.map(match => <MatchDetails  key={match.id} match={match} team={teamName}/>);
     };
 
     return (

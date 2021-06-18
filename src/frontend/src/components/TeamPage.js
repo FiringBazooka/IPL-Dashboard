@@ -56,7 +56,7 @@ const {teamName}=useParams();
                 <MatchDetails team={team} match={team.list[0]} />
             </div>
           
-            {team.list.slice(1).map(match =>  <MatchAdditionalDetails match={match} teamName={teamName} / >)}
+            {team.list.slice(1).map(match =>  <MatchAdditionalDetails match={match} key={match.id} teamName={teamName} / >)}
             <div className='more-section'>
                 <Link to={`/team/${teamName}/matches/${2020}`}>More ></Link>
             </div>
